@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 DWeb</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+      <!-- Tombol Install -->
+      
+<script>
+        if ('service-worker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('service-worker registration failed: ', err);
+        });
+      });
+  }
+</script>
+<style>
+    
+    *{
+        font-family: Tahoma;
+            max-width: 100%;
+        }
+        
+        body{
+            background-color:darkgray
+        }
+        
+        .header{
+            display: flex;
+            background-color: greenyellow;
+            gap: 1rem;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            position:fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: 1;
+            
+        }
+        
+        a{
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        a:hover{
+            background-color: cadetblue;
+            border-radius: 6px;
+        }
+        
+        h1{
+            padding-top: 60px;
+        }
+
+.Conten{
+            text-align: center;
+            margin-bottom: 150px;  
+        }
+        
+        .Conten .h3{
+            font-size: 30px;  
+        }
+
+        h1{
+            font-size: 50px;
+        }
+        
+        .header .img{
+            width: 40px;
+            margin-left: auto;
+            margin-right: 40px;
+        }
+        
+        .p{
+            max-width: 500px;
+            display: flex;
+            padding: 10px;
+            margin: auto;
+            margin-bottom: 2px;
+            font-size: 20px;    
+        }
+        
+        .Divisi p{
+            font-size: 20px;
+        }
+        
+        .Divisi h3{
+            font-size: 30px;
+        }
+        
+
+        #Divisi{
+            display: flex;
+            justify-content: center;
+        }
+
+        #p p{
+            font-size: 30px;
+        }
+
+        .divisi{
+            padding: 10px;
+            border: solid;
+            margin: 10px;
+            width: 300px;
+            min-width: 150px;
+        }
+        
+        .footer{
+            float: inline-end;
+            width: 100%; 
+            background-color:greenyellow; 
+            text-align: center; 
+            margin-top: 40px;
+            padding: 10px;
+        }
+
+        </style>
+</head>
+<body>
+    <div class="header">
+        <button id="installButton" style="display:none;">Install App</button>
+        <a id="Home" href="index.html" >Home</a>
+        <a id="About" href="About.html">About</a>
+        <a id="Contact" href="Contact.html">Contact</a>
+        <div class="img"><img src="rrq.jpeg" alt="logo"></div>
+    </div>
+    
+
+    <div class="Conten">
+        <h1> <marquee behavior="" direction="left">What is GDSC??</marquee></h1>
+        <p class="p">
+            Google Developer Student Clubs adalah sebuah komunitas 
+            yang dibuat oleh Google dan ditujukan bagi para mahasiswa 
+            yang tertarik dengan perkembangan teknologi Google.
+        </p>
+        
+        <p class="p">
+            Google Developer Student Clubs Universitas Andalas (GDSC Unand) 
+            terbuka bagi mereka yang tertarik untuk belajar bersama melalui 
+            video bersama, diskusi terbuka atau berkumpul bersama dengan 
+            beragam topik.
+        </p>
+        
+        <h3 class="h3">Divisi GDSC</h3>
+        <div id="Divisi">
+            <div class="divisi">
+                <p>
+                    <h2>Front End Developer</h2>
+                    Bertanggung jawab mengimplementasikan desain 
+                    dan konsep yang ada di web dengan menggunakan 
+                    beberapa bahasa pemrograman seperti HTML, CSS, 
+                    dan JavaScript menggunakan teknologi React 
+                    dan Firebase
+                </p>
+            </div>
+            
+            <div class="divisi">
+                <p>
+                    <h2>Back End Developer</h2>
+                    Bertanggung jawab mengembangkan keterampilan 
+                    dan skill dari sisi server sebuah sistem, 
+                    mempelajari teknologi seperti Node.js, 
+                    Express.js, MongoDB, dan MySQL untuk mengelola 
+                    data.
+                </p>
+            </div>
+            
+            <div class="divisi">
+                <p>
+                    <h2>Machine Learning</h2>
+                    Melakukan penelitian, pengembangan, desain 
+                    kecerdasan buatan hingga bertanggung jawab 
+                    untuk pembelajaran mesin, serta mempelajari 
+                    bahasa Python menggunakan tools dari Google 
+                    seperti Google Collab, Tensorflow, dan masih 
+                    banyak lagi.
+                </p>
+            </div>
+            
+            <div class="divisi">
+                <p>
+                    <h2>Mobile Developer</h2>
+                    Spesialiasi dalam teknologi mobile. Hal itu 
+                    meliputi membuat aplikasi untuk Android Google 
+                        dengan mempelajari Dart Programming. Framework, 
+                        maupun Firebase.
+                </p>
+                </div>
+            
+                <div class="divisi">
+                    <p>
+                        <h2> UI/UX</h2>
+                        Bertanggung jawab merancang antarmuka 
+                        pengguna yang menarik dan fungsional, serta 
+                        menciptakan pengalaman pengguna yang memuaskan 
+                        melalui tools Figma&fFigjam serta properti 
+                        Auto layout.
+                </p>
+                </div>
+        </div>
+
+            <div id="Divisi">
+                <div class="divisi">
+                    <p>
+                        <h2>Human Resource</h2>
+                        Bertanggung jawab untuk mengelola sumber daya 
+                        GDSC UNAND. Melakukan penilaian keterampilan 
+                        sumber daya GDSC UNAND, serta menciptakan 
+                        membentuk keakraban anggota komunitas.
+                </p>
+                </div>
+                <div class="divisi">
+                    <p>
+                        <h2>Curriculum</h2>
+                        Bertanggung jawab untuk menyusun materi pembelajaran 
+                        selama satu periode GDSC UNAND. Serta mengatur 
+                        timeline studyjam dan batasan dari setiap 
+                        divisi technical.
+                </p>
+                </div>
+                <div class="divisi">
+                    <p>
+                        <h2>Event Organizer</h2>
+                        Bertanggung jawab atas penjadwalan, perencanaan, 
+                        dan pengelolaan event GDSC UNAND hingga rancangan
+                        kegiatan yang dilakukan oleh GDSC UNAND.
+
+                </p>
+                </div>
+                <div class="divisi">
+                    <p>
+                        <h2>Public Relations</h2>
+                        Bertanggung jawab sebagai narahubung GDSC UNAND 
+                        dengan pihak eksternal, serta bertanggung jawab 
+                        dalam hal membangun kerjasama, serta menjaga 
+                        nama baik GDSC UNAND.
+                </p>
+                </div>
+                <div class="divisi">
+                    <p>
+                        <h2>Graphic Design</h2>
+                        Bertanggung jawab untuk membuat design konten 
+                        kreatif serta aset graphic yang dimiliki GDSC UNAND. 
+                        Melakukan dokumentasi acara, konten, dan digital 
+                        branding GDSC UNAND.
+
+                </p>
+                </div>
+                <div class="divisi">
+                    <p>
+                        <h2>Content Writing</h2>
+                        Bertanggung jawab untuk menyusun rencana konten 
+                        setiap sosial media, copywriting. menganalisis 
+                        kemajuan setiap sosial media, pembuatan caption, 
+                        serta mengelola sosial media dengan bijak.
+                </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <h3>TERIMAKASIH TELAH MAMPIR</h3>
+                <p>Website ini dibuat untuk tugas DWEB <br>
+                    Muhammad Galid Avero (2311532008)</p>
+            </div>
+    </div>
+</body>
+</html>

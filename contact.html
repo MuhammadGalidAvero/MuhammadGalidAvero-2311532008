@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 DWeb</title>
+    <meta name="theme-color" content="#000000">
+    <button id="installButton" style="display:none;">Install App</button>
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+
+        function showAlert() {
+            alert("Pesan terkirim!");
+        }
+    </script>
+    <style>
+
+        *{
+            font-family: Tahoma;
+            text-align: center;
+        }
+
+        body{
+            background-color:darkgray
+        }
+
+        .header{
+            display: flex;
+            background-color: greenyellow;
+            gap: 1rem;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            position: fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+
+        .header .img{
+            width: 40px;
+            margin-left: auto;
+            margin-right: 40px;
+        }
+
+        a{
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        img{
+            width: 50px
+        }
+
+        a:hover{
+            background-color: cadetblue;
+            border-radius: 6px;
+        }
+
+        .isi{
+            padding-top: 50px;
+            max-width: 100%;
+            left: 0;
+            right: 0;
+        }
+
+        .isi p{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .Foto img{
+            width: 200px;
+            border-radius: 20px;
+        }
+
+        #contact-form{
+            padding-bottom: 150px;
+        }
+
+        .footer{
+            position:fixed; 
+            bottom: 0; 
+            left: 0;
+            width: 100%;
+            background-color: greenyellow; 
+            text-align: center; 
+            padding: 5px;
+        }
+
+        #sosmed{
+            display: flex;
+            justify-content: center;
+        }
+
+        #contact-form table {
+            margin: 0 auto; 
+        }
+        
+        .kategori {
+            padding-right: 95px;
+        }
+ 
+
+    </style>
+
+
+
+</head>
+<body>
+    <div class="header">
+        <button id="installButton" style="display:fixed;">Install App</button>
+        <a id="Home" href="index.html" >Home</a>
+        <a id="About" href="About.html">About</a>
+        <a id="Contact" href="Contact.html">Contact</a>
+        <div class="img"><img src="rrq.jpeg" alt="logo"></div>
+
+    </div>
+
+    <div class="isi">
+        <h1>Kontak Kami</h1>
+        <h2>Masalah IT siap diselesaikan</h2>
+
+       <div id="sosmed"> 
+        
+            <p >
+                <img src="IG.webp" alt="Instagram"> 
+                <a href="https://www.instagram.com/mgalidav.r?igsh=Zms5M3ZndHlkeWd1">Instagram</a>
+            </p>
+
+            <p>
+                <img src="WA.png" alt="WhatsApp"> 
+                <a href="https://wa.me/qr/2J266LVTUIWGN1">WhatsApp</a>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="Foto">
+        <img src="almet.jpeg" alt="">
+
+    </div>
+
+    <div>
+        <form id="contact-form">
+            <table>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="email"></td>
+                </tr>
+                <tr>
+                    <td>Nama :</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Tanggal : </td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td>Gender :</td>
+                    <td>
+                        <input type="radio" name="Gender"> Laki - laki 
+                        <input type="radio" name="Gender"> Perempuan
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <td></td>
+                        <label class="kategori">Kategori pesan</label>
+                        <select>
+                            <option>Saran</option>
+                            <option>Kritik</option>
+                            <option>Pertanyaan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pesan</td>
+                    <td><textarea name="Pesan" id="" cols="30" rows="5" placeholder="Masukkan Pesan"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="reset" value="reset">
+                        <input type="button" onclick="showAlert()" value="Kirim">
+                    </td>
+                </tr>
+            </table>
+          </form>
+    </div>
+    
+    <div class="footer">
+        <h3>TERIMAKASIH TELAH MAMPIR</h3>
+        <p>Website ini dibuat untuk tugas DWEB <br>
+            Muhammad Galid Avero (2311532008)</p>
+    </div>
+
+</body>
+</html>

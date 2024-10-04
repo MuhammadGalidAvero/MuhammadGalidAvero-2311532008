@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 Design Web</title>
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+
+
+    <style>
+
+        *{
+            font-family: Tahoma;
+        }
+        
+        .header{
+            display: flex;
+            background-color: greenyellow;
+            gap: 1rem;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            position: fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+
+        .header img{
+            width: 40px;
+            text-align: end;
+            padding-top: 0;
+        }
+
+        body{
+            background-color:darkgray
+        }
+
+        a{
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        a:hover{
+            background-color: cadetblue;
+            border-radius: 6px;
+        }
+
+        .home{
+            text-align: center;
+        }
+
+        img{
+            width: 200px;
+            padding-top: 100px;
+        }
+
+
+        #gdsc{
+            width: 350px;
+        }
+
+        .footer{
+            position: fixed; 
+            bottom: 0; 
+            left: 0;
+            width: 100%; 
+            background-color:greenyellow;  
+            text-align: center; 
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button id="installButton" style="display:fixed;">Install App</button>
+        <a id="Home" href="index.html" >Home</a>
+        <a id="About" href="About.html">About</a>
+        <a id="Contact" href="Contact.html">Contact</a>
+        <div class="img"><img src="rrq.jpeg" alt="logo"></div>
+    </div>
+
+    <div class="home">
+        <div class="img">
+             <img src="Logo Unand PTNBH.png" alt="Universitas Andalas">
+             <img id="gdsc" src="GDSC-Logo.png" alt="GDSC-Logo">
+        </div>
+
+        <h2>
+            <b>Welcome to the Home Page <H2>UNIVERSITAS ANDALAS X GDSC</H2></b>
+        </h2>
+        <p><em>Kolaborasi untuk kejayaan bangsa</em></p>
+    </div>
+
+    <div class="footer">
+        <h3>TERIMAKASIH TELAH MAMPIR</h3>
+        <p>Website ini dibuat untuk tugas DWEB <br>
+            Muhammad Galid Avero (2311532008)</p>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+        //   console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+
+    // Pastikan path ke service worker sesuai
+navigator.serviceWorker.register('service-worker.js')
+    .then(function() {
+        console.log('Service Worker Registered');
+    })
+    .catch(function(error) {
+        console.error('Service Worker Registration Failed:', error);
+    });
+
+    let deferredPrompt;
+const installButton = document.getElementById('installButton');
+
+// Tangkap event 'beforeinstallprompt'
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Mencegah prompt default
+  e.preventDefault();
+  // Simpan event sehingga bisa dipicu nanti
+  deferredPrompt = e;
+  // Tampilkan tombol install
+  installButton.style.display = 'block';
+
+  installButton.addEventListener('click', () => {
+    // Sembunyikan tombol setelah diklik
+    installButton.style.display = 'none';
+    // Tampilkan prompt instalasi
+    deferredPrompt.prompt();
+    // Tunggu keputusan pengguna
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+</script>
+</body>
+</html>
